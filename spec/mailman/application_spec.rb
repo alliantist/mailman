@@ -26,7 +26,7 @@ describe Mailman::Application do
     context "passing config on initialization" do
       context "passing a hash" do
         before do
-          @app = Mailman::Application.new({poll_interval: 10}) {}
+          @app = Mailman::Application.new({:poll_interval => 10}) {}
         end
 
         it "should instanciate the configuration" do
