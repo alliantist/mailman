@@ -1,3 +1,5 @@
+# Adjusted version to work on REE-1.8.7-2012.02 and Rails 2.3.18
+
 # Mailman [![Build Status](https://secure.travis-ci.org/titanous/mailman.png)](https://secure.travis-ci.org/titanous/mailman)
 
 Mailman is an incoming mail processing microframework (with POP3 and Maildir
