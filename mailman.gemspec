@@ -18,11 +18,11 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = 'mailman'
 
-  s.add_dependency 'mail', '>= 2.0.3'
-  s.add_dependency 'activesupport', '>= 2.3.4'
-  s.add_dependency 'listen', '~> 2.2.0'
-  s.add_dependency 'maildir', '>= 0.5.0'
-  s.add_dependency 'i18n', '>= 0.4.1' # fix for mail/activesupport-3 dependency issue
+  s.add_dependency 'mail', '2.5.4'
+  s.add_dependency 'activesupport', '2.3.18'
+  s.add_dependency 'listen', '0.7.3'
+  s.add_dependency 'maildir', '2.1.0'
+  s.add_dependency 'i18n', '0.6.4' # fix for mail/activesupport-3 dependency issue
 
   s.add_development_dependency 'rspec', '~> 2.10'
 
