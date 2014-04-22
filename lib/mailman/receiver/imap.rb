@@ -53,8 +53,14 @@ module Mailman
       def get_messages
         @connection.search(@filter).each do |message|
           body = @connection.fetch(message, "RFC822")[0].attr["RFC822"]
-          @processor.process(body)
-          @connection.store(message, "+FLAGS", @done_flags)
+          begin
+            @processor.process(body)
+            @connection.store(message, "+FLAGS", @done_flags)
+          rescue StandardError => e
+            message = "#{e.class.to_s} processing '#{message.inspect}':" \
+                      "#{e.message}\n #{e.backtrace.join("\n")}"
+            Mailman.logger.error(message)
+          end
         end
         # Clears messages that have the Deleted flag set
         @connection.expunge
